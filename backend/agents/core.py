@@ -7,6 +7,7 @@ class AgentConfig(BaseModel):
     role: str
     goal: str
     tools: List[str] = []
+    instructions: str
 
 class BaseAgent(ABC):
     def __init__(self, config: AgentConfig):
