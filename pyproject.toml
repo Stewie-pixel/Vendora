@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vendora"
+version = "0.1.0"
+description = "A lightweight framework and CLI for managing Agentic Infrastructure"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "Vendora Team", email = "team@vendora.ai"}
+]
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.20.0",
+    "pydantic>=2.0.0",
+    "mcp>=0.1.0",
+    "httpx>=0.24.0",
+    "langgraph",
+    "langchain",
+    "pyyaml",
+    "typer>=0.9.0", 
+    "rich>=13.0.0" 
+]
+
+[project.scripts]
+vendora = "vendora.cli:app"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "black",
+    "isort",
+    "mypy"
+]
+
+[tool.setuptools.packages.find]
+include = ["vendora*", "multi-agent-system*"]
+exclude = ["tests*", "scripts*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
