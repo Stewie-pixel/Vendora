@@ -1,0 +1,6 @@
+# Default owner for all files in the repository
+* @vendora-team/vendora-admins
+
+# Specific owners for different directories
+/multi-agent-system @vendora-team/backend-devs
+/frontend @vendora-team/frontend-devs
