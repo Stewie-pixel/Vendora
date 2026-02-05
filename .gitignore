@@ -42,3 +42,6 @@ backend/__pycache__/
 mcp-servers/__pycache__/
 frontend/dist/
 frontend/node_modules/
+
+task.md.resolved
+implementation_plan.md.resolved
