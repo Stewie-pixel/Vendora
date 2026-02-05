@@ -28,20 +28,19 @@ graph TD
 
 ```text
 Vendora/
-├── .github/                # GitHub Configuration & Workflows
-├── multi-agent-system/     # Python Multi-Agent System
-│   ├── agents/             # Hierarchical Agents (Root, Supervisors, Workers)
-│   ├── mcp/                # MCP Integrations
-│   ├── memory/             # Agent Memory
-│   ├── llm/                # LLM Client & Cost Estimator
-│   ├── orchestration/      # Graph & State
-│   ├── config/             # Configuration (Budgets)
-│   ├── main.py             # API Entry point
-│   └── requirements.txt    # Python dependencies
+├── multi-agent-system/     # Application: Hierarchical Multi-Agent Department
+│   ├── agents/             # Root, Supervisors, and Workers
+│   ├── mcp/                # MCP Integrations (Filesystem, etc.)
+│   └── main.py             # Application Entry point
+├── vendora/                # Framework: Mini-Agents Modules
+│   └── README.md           # Framework documentation
+├── examples/               # Usage Examples (e.g., MongoDB Agent)
+├── tests/                  # System-wide Tests
+├── scripts/                # Utility & Maintenance Scripts
 ├── frontend/               # React (Vite) Frontend
-│   ├── src/                # Source code
-│   └── package.json        # Node dependencies
-└── .env.example            # Environment variables template
+├── .github/                # CI/CD & GitHub Config
+├── pyproject.toml          # Project Dependencies & Config
+└── README.md               # Project Documentation
 ```
 
 
@@ -52,25 +51,20 @@ Vendora/
 - **Python 3.12+**
 - **Node.js 20+**
 
-### 1. Backend Setup
+### 1. Python Setup
 
-Navigate to the `multi-agent-system` directory and set up the virtual environment:
+Install the project with dependencies:
 
 ```bash
-cd multi-agent-system
+# Create and activate virtual environment
 python -m venv venv
-
-# Activate Virtual Environment
 # Windows:
 venv\Scripts\activate
 # Mac/Linux:
 # source venv/bin/activate
 
-# Install Dependencies
-pip install -r requirements.txt
-
-# Run the Server
-python main.py
+# Install Vendora in editable mode
+pip install -e .[dev]
 ```
 The API will be available at `http://localhost:8000`.
 
