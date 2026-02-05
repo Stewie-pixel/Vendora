@@ -28,18 +28,22 @@ graph TD
 
 ```text
 Vendora/
-├── backend/                # Python FastAPI Backend
-│   ├── agents/             # Agent definitions and core logic
+├── .github/                # GitHub Configuration & Workflows
+├── multi-agent-system/     # Python Multi-Agent System
+│   ├── agents/             # Hierarchical Agents (Root, Supervisors, Workers)
+│   ├── mcp/                # MCP Integrations
+│   ├── memory/             # Agent Memory
+│   ├── llm/                # LLM Client & Cost Estimator
+│   ├── orchestration/      # Graph & State
+│   ├── config/             # Configuration (Budgets)
 │   ├── main.py             # API Entry point
-│   ├── orchestrator.py     # Task routing and agent management
-│   ├── mcp_client.py       # MCP integration layer
 │   └── requirements.txt    # Python dependencies
 ├── frontend/               # React (Vite) Frontend
 │   ├── src/                # Source code
 │   └── package.json        # Node dependencies
-├── mcp-servers/            # Custom MCP Servers
 └── .env.example            # Environment variables template
 ```
+
 
 ## Getting Started
 
@@ -50,10 +54,10 @@ Vendora/
 
 ### 1. Backend Setup
 
-Navigate to the backend directory and set up the virtual environment:
+Navigate to the `multi-agent-system` directory and set up the virtual environment:
 
 ```bash
-cd backend
+cd multi-agent-system
 python -m venv venv
 
 # Activate Virtual Environment
