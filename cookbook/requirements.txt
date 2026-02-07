@@ -6,3 +6,6 @@ httpx
 langgraph
 langchain
 pyyaml
+google-genai
+openai
+python-dotenv
